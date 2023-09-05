@@ -17,7 +17,7 @@ export default class Navbar extends Component {
         return (
             <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
                 <Link to="/">
-                    <img src=".\img\apple.PNG" alt="logo" className="navbar-brand logo-image" />
+                    <img src="img/apple.png" alt="logo" className="navbar-brand logo-image" />
                 </Link>
                 <ul className="navbar-nav align-items-center">
                     <li className="nav-item ml-5">
