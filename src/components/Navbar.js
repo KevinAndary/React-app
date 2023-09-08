@@ -16,20 +16,32 @@ export default class Navbar extends Component {
     render() {
         return (
             <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
-                <Link to="/">
-                    <img src="img/apple.png" alt="logo" className="navbar-brand logo-image" />
+                <Link to="/" className="navbar-brand logo-image">
+                    <img src="img/apple.png" alt="logo" className="logo" />
+                    <span className="company-name">CellTech</span>
                 </Link>
-                <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ml-5">
-                        <NavLink
-                            to="/"
-                            exact
-                            className="nav-link"
-                            activeClassName="active"
-                            onClick={() => this.setActiveLink('products')}
-                        >
-                            products
-                        </NavLink>
+                <button
+                    className="navbar-toggler"
+                    type="button"
+                    data-toggle="collapse"
+                    data-target="#navbarSupportedContent"
+                    aria-controls="navbarSupportedContent"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation"
+                >
+                    <span className="navbar-toggler-icon"></span>
+                </button>
+                <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul className="navbar-nav align-items-center">
+                        <li className="nav-item ml-5">
+                            <NavLink
+                                to="/"
+                                exact
+                                className="nav-link"
+                                activeClassName="active"
+                            >
+                                Products
+                            </NavLink>
                     </li>
                     <li className="nav-item ml-5">
                         <NavLink
