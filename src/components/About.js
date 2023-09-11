@@ -7,12 +7,7 @@ const AboutPage = () => {
         <h1 className="text-center">About Us</h1>
         <hr />
         <p className="lead text-center">
-        Apple Inc. is an American multinational technology company headquartered in Cupertino, California. 
-        Apple is the world's largest technology company by revenue, with US$394.3 billion in 2022 revenue.[6] 
-        As of March 2023, Apple is the world's biggest company by market capitalization.[7] As of June 2022, 
-        Apple is the fourth-largest personal computer vendor by unit sales and second-largest mobile phone 
-        manufacturer. It is one of the Big Five American information technology companies, alongside Alphabet 
-        Inc. (parent company of Google), Amazon, Meta Platforms (formerly Facebook, Inc.), and Microsoft.
+        At PhonePro, we are passionate about all things mobile technology. With a mission to connect people with the latest and greatest in the world of smartphones, our journey began with a simple idea: to provide a one-stop destination for all your mobile needs. As technology enthusiasts ourselves, we understand the importance of staying connected and up-to-date with the latest innovations. Our team is dedicated to curating a diverse selection of top-tier smartphones, accessories, and gadgets, carefully chosen for their quality and value. With a commitment to customer satisfaction, we strive to offer not only the best products but also a seamless shopping experience. Explore our online store and discover a world of possibilities to enhance your mobile lifestyle. Welcome to PhonePro, where technology meets your lifestyle.
         </p>
 
         <h2 className="text-center py-4">Our Products</h2>
