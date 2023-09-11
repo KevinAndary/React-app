@@ -1,186 +1,173 @@
 import React, { Component } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import styled from 'styled-components';
-import { ButtonContainer } from './Button';
-import { FaUser, FaEnvelope } from 'react-icons/fa';
+import { FaUser, FaCartPlus } from 'react-icons/fa';
 
 export default class Navbar extends Component {
-    state = {
-        activeLink: ''
-    };
+  state = {
+    activeLink: ''
+  };
 
-    setActiveLink = (link) => {
-        this.setState({ activeLink: link });
-    };
+  setActiveLink = (link) => {
+    this.setState({ activeLink: link });
+  };
 
-    render() {
-        return (
-            <NavWrapper className="navbar navbar-expand-sm navbar-dark px-sm-5">
-               <Link to="/">
-                    <img src="img/apple.png" alt="logo" className="navbar-brand logo-image" />
-                </Link>
-                <ul className="navbar-nav align-items-center">
-                    <li className="nav-item ml-5">
-                        <NavLink
-                            to="/"
-                            exact
-                            className="nav-link"
-                            activeClassName="active"
-                            onClick={() => this.setActiveLink('products')}
-                        >
-                            products
-                        </NavLink>
-                    </li>
-                    
-                    <li className="nav-item ml-5">
-                        <NavLink
-                            to="/about"
-                            className="nav-link"
-                            activeClassName="active"
-                            onClick={() => this.setActiveLink('about')}
-                        >
-                            about
-                        </NavLink>
-                    </li>
-                    <li className="nav-item ml-5">
-                        <NavLink
-                            to="/contact"
-                            className="nav-link"
-                            activeClassName="active"
-                            onClick={() => this.setActiveLink('contact')}
-                        >
-                            contact
-                        </NavLink>
-                    </li>
-                </ul>
-                <div className="ml-auto">
-                    <Link to="/login" className="btn">
-                        <FaUser className="mr-1" />
-                        Login
-                    </Link>
-                    <Link to="/signup" className="btn">
-                        <FaUser className="mr-1" />
-                        Signup
-                    </Link>
-                    <Link to="/cart" className="ml-3">
-                        <ButtonContainer className="btn">
-                            <span className="mr-2">
-                                <i className="fas fa-cart-plus" />
-                            </span>
-                            my cart
-                        </ButtonContainer>
-                    </Link>
-                </div>
-            </NavWrapper>
-        );
-    }
+  render() {
+    return (
+      <NavWrapper className="navbar navbar-expand-lg navbar-dark bg-dark px-sm-5">
+        <Link to="/">
+          <img src="img/apple.png" alt="logo" className="navbar-brand logo-image" />
+        </Link>
+        <button
+          className="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav mx-auto"> {/* Use mx-auto to center links on larger screens */}
+            <li className="nav-item">
+              <NavLink
+                to="/"
+                exact
+                className="nav-link"
+                activeClassName="active"
+              >
+                Products
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/about"
+                className="nav-link"
+                activeClassName="active"
+              >
+                About
+              </NavLink>
+            </li>
+            <li className="nav-item">
+              <NavLink
+                to="/contact"
+                className="nav-link"
+                activeClassName="active"
+              >
+                Contact
+              </NavLink>
+            </li>
+          </ul>
+        </div>
+        <div className="ml-auto">
+          <Link to="/login" className="btn">
+            <FaUser className="mr-1" />
+            Login
+          </Link>
+          <Link to="/signup" className="btn">
+            <FaUser className="mr-1" />
+            Signup
+          </Link>
+          <Link to="/cart" className="ml-3">
+            <button className="btn">
+              <span className="mr-2">
+                <FaCartPlus />
+              </span>
+              My Cart
+            </button>
+          </Link>
+        </div>
+      </NavWrapper>
+    );
+  }
 }
 
 const NavWrapper = styled.nav`
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    padding: 10px 20px;
+  background-color: #333; /* Dark background color */
+  border-bottom: 1px solid #eee;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  .navbar-brand {
+    color: #fff; /* White text color */
+    text-decoration: none;
+    font-size: 1.2rem;
+  }
+
+  .logo-image {
+    height: 50px;
+  }
+
+  .navbar-toggler {
+    border: none;
+  }
+
+  .navbar-nav {
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    
-    .navbar-brand {
-        color: #000;
-        text-decoration: none;
-        font-size: 1.2rem;
+    flex-direction: row; /* Ensure links are side-by-side on larger screens */
+
+    .nav-item {
+      margin-right: 15px; /* Add horizontal spacing between items */
     }
 
-    .logo-image {
-        height: 50px;
-    }
+    .nav-link {
+      color: #fff; /* White text color */
+      font-weight: 500;
+      text-transform: uppercase;
+      transition: color 0.3s ease-in-out;
+      font-size: 1rem;
 
-    .navbar-nav {
-        display: flex;
+      &:hover {
+        color: #f8f9fa; /* Lighter text color on hover */
+      }
+
+      &.active {
+        background-color: #f8f9fa; /* Light background color */
+        color: #333; /* Dark text color */
+        font-weight: bold;
+        padding: 0.5rem;
+        border-radius: 1rem;
+        display: inline-flex;
         align-items: center;
-
-        .nav-item {
-            margin-left: 15px;
-
-            &:first-child {
-                margin-left: 0;
-            }
-        }
-
-        .nav-link {
-            color: #555;
-            font-weight: 500;
-            text-transform: uppercase;
-            transition: color 0.3s ease-in-out;
-            font-size: 1rem;
-            
-            &:hover {
-                color: #000;
-            }
-
-            &.active {
-                background-color: #000;
-                color: #fff;
-                font-weight: bold;
-                padding: 0.5rem;
-                border-radius: 1rem; /* Adjust the value to control the roundness of the oval */
-                display: inline-flex;
-                align-items: center;
-                justify-content: center;
-                height: 30px; /* Adjust the value to control the height of the oval */
-                width: 80px; /* Adjust the value to control the width of the oval */
-            }
-        }
-    }
-
-    .ml-auto {
-        display: flex;
-        align-items: center;
-
-        .btn {
-            font-size: 16px;
-            font-weight: 500;
-            text-transform: uppercase;
-            border-radius: 20px;
-            transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
-            color: black;
-            border: 1px solid black;
-            padding: 8px 16px;
-        
-            &:hover,
-            &:focus,
-            &.active {
-                background-color: #000;
-                color: #fff;
-            }
-        
-            .fa-user {
-                margin-right: 8px;
-            }
-        
-            .fa-cart-plus {
-                font-size: 1.2rem;
-                margin-right: 8px;
-            }
-        }
-        
-
-        .signup-btn {
-            display: flex;
-            align-items: center;
-            
-            .fa-plus {
-                margin-left: 4px;
-            }
-        }
-    }
-
-    .navbar-nav,
-    .ml-auto {
-        flex-grow: 1;
         justify-content: center;
+      }
     }
+  }
+
+  .ml-auto {
+    margin-top: 20px; /* Add top margin to the right-aligned content */
+  }
+
+  .btn {
+    font-size: 16px;
+    font-weight: 500;
+    text-transform: uppercase;
+    border-radius: 1rem; /* Adjust the border-radius for consistency */
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+    color: #f8f9fa; /* Lighter text color for buttons */
+    background-color: transparent; /* Transparent background for buttons */
+    border: none; /* Remove the button border */
+    padding: 8px 16px;
+
+    &:hover,
+    &:focus,
+    &.active {
+      background-color: #f8f9fa; /* Light background color for buttons on hover */
+      color: #333; /* Dark text color for buttons on hover */
+    }
+
+    .fa-user {
+      margin-right: 8px;
+    }
+
+    .fa-cart-plus {
+      font-size: 1.2rem;
+      margin-right: 8px;
+    }
+  }
 `;
-
-
-
-
