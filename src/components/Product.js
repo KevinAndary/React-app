@@ -5,19 +5,37 @@ import PropTypes from 'prop-types';
 import { ProductConsumer } from '../context';
 
 export default class Product extends Component {
+  state = {
+    isZoomed: false, // Initialize zoom state
+  };
+
+  // Function to toggle zoom state
+  toggleZoom = () => {
+    this.setState((prevState) => ({
+      isZoomed: !prevState.isZoomed,
+    }));
+  };
+
   render() {
     const { id, title, img, price, inCart } = this.props.product;
+    const { isZoomed } = this.state;
+
     return (
-      <ProductWrapper className="col-12 col-sm-6 col-md-4 col-lg-3 my-3">
+      <ProductWrapper
+        className={`col-12 col-sm-6 col-md-4 col-lg-3 my-3 ${isZoomed ? 'zoomed' : ''}`}
+      >
         <div className="card">
           <ProductConsumer>
             {(value) => (
               <div
                 className="img-container p-3"
-                onClick={() => value.handleDetail(id)}
+                onClick={() => {
+                  value.handleDetail(id);
+                  this.toggleZoom(); // Toggle zoom state on tap
+                }}
               >
                 <Link to="/details">
-                  <img src={img} alt="product" className="card-img-top" />
+                  <img src={img} alt="product" className={`card-img-top ${isZoomed ? 'zoomed' : ''}`} />
                 </Link>
                 <button
                   className="cart-btn"
@@ -84,12 +102,10 @@ const ProductWrapper = styled.div`
   .img-container {
     position: relative;
     overflow: hidden;
+    transition: all 0.3s ease-in-out;
   }
   .card-img-top {
-    transition: all 0.3s linear;
-  }
-  .img-container:hover .card-img-top {
-    transform: scale(1.2);
+    transition: all 0.3s ease-in-out;
   }
   .cart-btn {
     position: absolute;
@@ -110,6 +126,13 @@ const ProductWrapper = styled.div`
   .cart-btn:hover {
     color: var(--mainBlue);
     cursor: pointer;
+  }
+
+  /* Zoomed effect */
+  &.zoomed {
+    .card-img-top {
+      transform: scale(1.2); /* Adjust the scale value as needed */
+    }
   }
 
   @media (max-width: 576px) {
