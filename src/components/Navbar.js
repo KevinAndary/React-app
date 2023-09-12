@@ -104,13 +104,13 @@ const NavWrapper = styled.nav`
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
-  fontFamily: 'Lobster, cursive',
 }
 
 /* Styles for mobile devices (e.g., smartphones) */
 @media (max-width: 768px) {
   .navbar-brand {
     font-size: 20px; /* Adjust font size for mobile */
+    fontFamily: 'Lobster, cursive',
   }
 }
 
@@ -118,6 +118,7 @@ const NavWrapper = styled.nav`
 @media (min-width: 769px) {
   .navbar-brand {
     font-size: 28px; /* Adjust font size for laptops/desktops */
+    fontFamily: 'Lobster, cursive',
   }
 
   .navbar-brand:hover {
