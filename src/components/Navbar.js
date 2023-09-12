@@ -15,9 +15,10 @@ export default class Navbar extends Component {
   render() {
     return (
       <NavWrapper className="navbar navbar-expand-lg navbar-dark bg-dark px-sm-5">
-        <Link to="/">
-          <img src="img/apple.png" alt="logo" className="navbar-brand logo-image" />
+        <Link to="/" className="navbar-brand">
+          <span className="logo-text">PhonePro</span>
         </Link>
+
         <button
           className="navbar-toggler"
           type="button"
@@ -91,6 +92,28 @@ const NavWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+/* Add CSS styles to make the text stylish, colorful, and attractive */
+.navbar-brand {
+  font-family: 'Arial', sans-serif; /* Use an appropriate font-family */
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #007BFF; /* Set the text color to your desired color */
+  text-decoration: none; /* Remove underline */
+}
+
+/* Optional: Add a hover effect for interactivity */
+.navbar-brand:hover {
+  color: #FF5733; /* Change the color on hover */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Optional: Add additional styles for more attractiveness */
+.logo-text {
+  font-weight: bold; /* Make the text bold */
+  letter-spacing: 2px; /* Adjust letter spacing for style */
+  text-transform: uppercase; /* Convert text to uppercase */
+}
+
 
   .navbar-brand {
     color: #fff; /* White text color */
