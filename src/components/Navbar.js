@@ -93,46 +93,35 @@ const NavWrapper = styled.nav`
   align-items: center;
   justify-content: space-between;
 
-/* Base styles for both mobile and laptop versions */
+/* Add CSS styles to make the text stylish, colorful, and attractive */
 .navbar-brand {
-  font-size: 24px;
-  text-decoration: none;
-  transition: color 0.3s ease;
+  font-family: 'Lobster, cursive', sans-serif; /* Use an appropriate font-family */
+  font-size: 24px; /* Adjust the font size as needed */
+  color: #007BFF; /* Set the text color to your desired color */
+  text-decoration: none; /* Remove underline */
 }
 
+/* Optional: Add a hover effect for interactivity */
+.navbar-brand:hover {
+  color: #FF5733; /* Change the color on hover */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+/* Optional: Add additional styles for more attractiveness */
 .logo-text {
-  font-weight: bold;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-
-/* Styles for mobile devices (e.g., smartphones) */
-@media (max-width: 768px) {
-  .navbar-brand {
-    font-size: 20px; /* Adjust font size for mobile */
-    fontFamily: 'Lobster, cursive',
-  }
-}
-
-/* Styles for laptop/desktop devices */
-@media (min-width: 769px) {
-  .navbar-brand {
-    font-size: 28px; /* Adjust font size for laptops/desktops */
-    fontFamily: 'Lobster, cursive',
-  }
-
-  .navbar-brand:hover {
-    color: #FF5733; /* Change color on hover for laptops/desktops */
-  }
+  font-weight: bold; /* Make the text bold */
+  letter-spacing: 2px; /* Adjust letter spacing for style */
+  text-transform: uppercase; /* Convert text to uppercase */
 }
 
 
 
-  .navbar-brand {
-    color: #fff; /* White text color */
-    text-decoration: none;
-    font-size: 1.2rem;
-  }
+
+  // .navbar-brand {
+  //   color: #fff; /* White text color */
+  //   text-decoration: none;
+  //   font-size: 1.2rem;
+  // }
 
   .logo-image {
     height: 50px;
