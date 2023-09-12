@@ -97,7 +97,7 @@ const NavWrapper = styled.nav`
 .navbar-brand {
   font-family: 'Lobster, cursive', sans-serif; /* Use an appropriate font-family */
   font-size: 24px; /* Adjust the font size as needed */
-  color: #007BFF; /* Set the text color to your desired color */
+  color: #fff; /* Set the text color to your desired color */
   text-decoration: none; /* Remove underline */
 }
 
