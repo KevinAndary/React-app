@@ -104,6 +104,7 @@ const NavWrapper = styled.nav`
   font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
+  fontFamily: 'Lobster, cursive',
 }
 
 /* Styles for mobile devices (e.g., smartphones) */
